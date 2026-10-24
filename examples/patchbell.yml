@@ -1,0 +1,23 @@
+# Patchbell watchlist: https://github.com/kemal-arslan/patchbell
+# Commit this next to .github/workflows/patchbell.yml.
+level: critical # exploited | critical | high | all
+
+items:
+  # A product name and the version you run.
+  - php 8.3.10
+  - name: Plex Media Server
+    version: 1.41.2
+    level: exploited # only tell me when attackers are using it
+    note: home server
+
+  # Packages, checked through OSV.
+  - npm:express@4.21.2
+  - pypi:django@5.2.7
+
+  # Distro packages: OSV knows which fixes Debian and Ubuntu backported.
+  - osv:Debian:12/openssl@3.0.17-1~deb12u3
+
+  # Exact NVD products, when a name is ambiguous.
+  - cpe: cpe:2.3:a:f5:nginx
+    name: nginx
+    version: 1.26.2

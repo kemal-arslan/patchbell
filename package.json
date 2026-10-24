@@ -1,0 +1,61 @@
+{
+  "name": "patchbell",
+  "version": "0.1.0",
+  "description": "Get told when software you run is hit by a serious vulnerability, and only then. A local-first CVE watchlist for the terminal, GitHub Actions and AI agents (MCP).",
+  "license": "MIT",
+  "author": "Kemal ARSLAN",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kemal-arslan/patchbell.git"
+  },
+  "homepage": "https://github.com/kemal-arslan/patchbell#readme",
+  "bugs": {
+    "url": "https://github.com/kemal-arslan/patchbell/issues"
+  },
+  "keywords": [
+    "cve",
+    "vulnerability",
+    "security",
+    "kev",
+    "epss",
+    "nvd",
+    "osv",
+    "notifications",
+    "ntfy",
+    "watchlist",
+    "mcp",
+    "model-context-protocol",
+    "claude",
+    "github-actions"
+  ],
+  "type": "module",
+  "bin": {
+    "patchbell": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "dev": "tsx src/cli.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "catalog": "tsx scripts/build-catalog.ts",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.1",
+    "yaml": "2.9.1"
+  },
+  "devDependencies": {
+    "@types/node": "24.19.2",
+    "tsx": "4.23.15",
+    "typescript": "5.9.3",
+    "vitest": "5.0.5"
+  }
+}

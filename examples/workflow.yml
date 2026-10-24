@@ -1,0 +1,21 @@
+# .github/workflows/patchbell.yml
+name: Patchbell
+
+on:
+  schedule:
+    - cron: '17 7 * * *' # every day at 07:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: kemal-arslan/patchbell@v0
+        with:
+          watchlist: patchbell.yml
+          # nvd-api-key: ${{ secrets.NVD_API_KEY }}

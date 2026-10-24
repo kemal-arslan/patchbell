@@ -1,0 +1,41 @@
+name: Patchbell
+description: Opens a GitHub issue when software you run is hit by a serious vulnerability, and only then.
+author: Kemal ARSLAN
+branding:
+  icon: bell
+  color: orange
+
+inputs:
+  watchlist:
+    description: Path to the watchlist file (YAML or JSON).
+    default: patchbell.yml
+  level:
+    description: "Alert level: exploited, critical, high or all. Defaults to the file's level, then critical."
+    default: ''
+  version:
+    description: Patchbell version from npm.
+    default: '0'
+  nvd-api-key:
+    description: Optional NVD API key, for faster checks of many products.
+    default: ''
+  github-token:
+    description: Token used to open issues. Needs issues write permission.
+    default: ${{ github.token }}
+
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+      with:
+        node-version: 24
+    - shell: bash
+      env:
+        GITHUB_TOKEN: ${{ inputs.github-token }}
+        NVD_API_KEY: ${{ inputs.nvd-api-key }}
+        PATCHBELL_VERSION: ${{ inputs.version }}
+        PATCHBELL_WATCHLIST: ${{ inputs.watchlist }}
+        PATCHBELL_LEVEL: ${{ inputs.level }}
+      run: |
+        args=(check --watchlist "$PATCHBELL_WATCHLIST" --github-issues)
+        if [ -n "$PATCHBELL_LEVEL" ]; then args+=(--level "$PATCHBELL_LEVEL"); fi
+        npx -y "patchbell@$PATCHBELL_VERSION" "${args[@]}"

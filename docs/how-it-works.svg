@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 230" font-family="-apple-system, system-ui, 'Segoe UI', Roboto, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0 10 5 0 10z" fill="#8b949e"/>
+    </marker>
+  </defs>
+  <rect width="880" height="230" rx="16" fill="#f6f8fa"/>
+  <g>
+    <rect x="24" y="28" width="250" height="174" rx="12" fill="#fff" stroke="#d0d7de"/>
+    <text x="44" y="64" font-size="13" font-weight="700" fill="#0969da">1 · WATCH</text>
+    <text x="44" y="92" font-size="17" font-weight="700" fill="#1f2328">You list what you run</text>
+    <text x="44" y="122" font-size="13.5" fill="#57606a">"plex 1.41.2", "php 8.3.10",</text>
+    <text x="44" y="142" font-size="13.5" fill="#57606a">npm or PyPI packages, distro</text>
+    <text x="44" y="162" font-size="13.5" fill="#57606a">packages, routers. Scanning</text>
+    <text x="44" y="182" font-size="13.5" fill="#57606a">your computer is optional.</text>
+  </g>
+  <line x1="280" y1="115" x2="308" y2="115" stroke="#8b949e" stroke-width="2" marker-end="url(#arrow)"/>
+  <g>
+    <rect x="315" y="28" width="250" height="174" rx="12" fill="#fff" stroke="#d0d7de"/>
+    <text x="335" y="64" font-size="13" font-weight="700" fill="#cf222e">2 · MATCH</text>
+    <text x="335" y="92" font-size="17" font-weight="700" fill="#1f2328">Your version, not the news</text>
+    <text x="335" y="122" font-size="13.5" fill="#57606a">Version ranges from NVD, OSV</text>
+    <text x="335" y="142" font-size="13.5" fill="#57606a">and cve.org. Exploited (CISA</text>
+    <text x="335" y="162" font-size="13.5" fill="#57606a">KEV), likely (EPSS) or critical</text>
+    <text x="335" y="182" font-size="13.5" fill="#57606a">only. Everything else stays quiet.</text>
+  </g>
+  <line x1="571" y1="115" x2="599" y2="115" stroke="#8b949e" stroke-width="2" marker-end="url(#arrow)"/>
+  <g>
+    <rect x="606" y="28" width="250" height="174" rx="12" fill="#fff" stroke="#d0d7de"/>
+    <text x="626" y="64" font-size="13" font-weight="700" fill="#1a7f37">3 · RING</text>
+    <text x="626" y="92" font-size="17" font-weight="700" fill="#1f2328">One message, with the fix</text>
+    <text x="626" y="122" font-size="13.5" fill="#57606a">Desktop, ntfy, Telegram, Slack,</text>
+    <text x="626" y="142" font-size="13.5" fill="#57606a">Discord, a webhook or a GitHub</text>
+    <text x="626" y="162" font-size="13.5" fill="#57606a">issue. Or ask your AI agent</text>
+    <text x="626" y="182" font-size="13.5" fill="#57606a">over MCP: "am I affected?"</text>
+  </g>
+</svg>

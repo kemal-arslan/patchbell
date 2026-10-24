@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      body { margin: 0; padding: 24px; background: transparent; }
+      .window { width: 860px; border-radius: 12px; overflow: hidden; background: #0f1218; box-shadow: 0 20px 50px rgb(0 0 0 / 0.35); font: 13.5px/1.55 ui-monospace, 'SF Mono', Menlo, monospace; color: #d7dce6; }
+      .bar { display: flex; gap: 8px; padding: 12px 14px; background: #1a1f29; }
+      .bar i { width: 12px; height: 12px; border-radius: 50%; background: #ff5f57; }
+      .bar i:nth-child(2) { background: #febc2e; } .bar i:nth-child(3) { background: #28c840; }
+      pre { margin: 0; padding: 16px 20px 20px; white-space: pre; }
+      .p { color: #7ee787; } .c { color: #f0f6fc; font-weight: 600; } .d { color: #6e7681; } .b { color: #f0f6fc; font-weight: 700; }
+      .g { color: #3fb950; } .y { color: #d29922; } .r { color: #ff7b72; }
+    </style>
+  </head>
+  <body>
+    <div class="window">
+      <div class="bar"><i></i><i></i><i></i></div>
+<pre><span class="p">$</span> <span class="c">npx patchbell add "plex 1.41.2"</span>
+<span class="g">Added</span> <span class="b">plex</span>: Plex Media Server 1.41.2  <span class="d">cpe:2.3:a:plex:media_server</span>
+<span class="r">●</span> <span class="b">Plex Media Server 1.41.2</span>  4 alerts, <span class="r">4 exploited</span>
+    <span class="b">CVE-2026-96656</span>  high 8.6 · <span class="r">exploited</span>
+      Plex Media Server before 1.43.3.10861 allows an admin user to write arbitrary files…
+      <span class="d">Attackers are already using it (CISA, since Oct 20, 2026).</span>
+      Fix: Update to 1.43.3.10861 or later.
+    <span class="d">…</span>
+
+<span class="p">$</span> <span class="c">npx patchbell add "php 8.3.10"</span>
+<span class="y">●</span> <span class="b">PHP 8.3.10</span>  8 alerts
+    <span class="b">CVE-2026-109618</span>  <span class="r">critical 9.8</span> · EPSS 12%
+      PHP uses longjmp() for out-of-memory (OOM) errors to exit the current context…
+      <span class="d">An attacker can crash it or possibly run code on it over the network without logging in.</span>
+      Fix: Update to 8.3.36 or later.
+    <span class="d">…</span>
+
+<span class="p">$</span> <span class="c">npx patchbell add "nginx 1.26.2"</span>
+<span class="g">✓</span> nginx 1.26.2  nothing at your alert level <span class="d">(1 lower-severity issue: patchbell check --all)</span>
+  <span class="y">!</span> nginx 1.26 no longer gets security fixes (since 2025-04-23). Newest: 1.31.8.
+
+<span class="p">$</span> <span class="c">npx patchbell notify ntfy my-hard-to-guess-topic &amp;&amp; npx patchbell schedule daily</span>
+<span class="g">Saved.</span> Channels: ntfy. Try: patchbell notify test
+Patchbell will check every day at 09:00.
+</pre>
+    </div>
+  </body>
+</html>
